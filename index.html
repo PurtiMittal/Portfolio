@@ -1,0 +1,3752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Purti | Data Analytics Portfolio</title>
+  <meta name="description"
+content="Purti | Data Analytics Portfolio showcasing SQL, Power BI, Excel and business analytics projects.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+  font-family:'Poppins',sans-serif;
+
+  background:
+  radial-gradient(circle at top right,
+  rgba(124,140,255,0.12),
+  transparent 32%),
+
+  radial-gradient(circle at bottom left,
+  rgba(124,140,255,0.08),
+  transparent 28%),
+
+  #07111f;
+
+  color:#f8fafc;
+
+  overflow-x:hidden;
+}
+
+   .container{
+      width: 95%;
+      max-width:1650px;
+      margin:auto;
+}
+
+    a{
+      text-decoration:none;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      background:rgba(7,17,31,0.75);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+    }
+
+    .logo{
+  font-size:30px;
+  font-weight:700;
+  color:#22d3ee;
+  letter-spacing:-1px;
+}
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:32px;
+      list-style:none;
+    }
+
+   .nav-links a{
+  color:#dbe4ee;
+  font-size:16px;
+  font-weight:500;
+  transition:0.3s;
+  position:relative;
+}
+
+    .nav-links a:hover{
+      color:#22d3ee;
+    }
+
+
+    .nav-links a:not(.resume-btn)::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0%;
+  height:2px;
+  background:#22d3ee;
+  transition:0.2s;
+}
+
+.nav-links a:not(.resume-btn):hover::after{
+  width:100%;
+}
+
+    .resume-btn{
+  padding:14px 24px;
+  border-radius:14px;
+  background:#22d3ee;
+  color:#07111f !important;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.resume-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(124,140,255,0.28);
+}
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:92vh;
+      display:flex;
+      align-items:start;
+      padding-top:120px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#22d3ee;
+      opacity:0.08;
+      border-radius:50%;
+      top:-180px;
+      right:-100px;
+      filter:blur(120px);
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      width:450px;
+      height:450px;
+      background:#06b6d4;
+      opacity:0.08;
+      border-radius:50%;
+      bottom:-200px;
+      left:-100px;
+      filter:blur(120px);
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:0.9fr 1.35fr 0.85fr;
+      gap:100px;
+      align-items:start;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-text{
+    padding-top:30px;
+    }
+
+    .hero-subline{
+      font-size:36px;
+      color:#94a3b8;
+      margin-top:18px;
+      line-height:1.3;
+      font-weight:600;
+      letter-spacing:-1px;
+    }
+  
+
+    /* GLASS EFFECT */
+
+    .glass{
+      background:rgba(17,24,39,0.72);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    /* PROFILE CARD */
+
+    .profile-card{
+      border-radius:28px;
+      padding:28px;
+      text-align:center;
+      padding:36px 30px;
+    }
+
+    .profile-photo{
+      width:100%;
+      max-width:240px;
+      height:300px;
+      object-fit:cover;
+      border-radius:22px;
+      margin:0 auto 24px;
+      display:block;
+      border:2px solid rgba(124,140,255,0.35);
+      box-shadow:0 15px 35px rgba(0,0,0,0.35);
+    }
+
+    .profile-card h2{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .profile-role{
+      color:#22d3ee;
+      font-size:15px;
+      margin-bottom:28px;
+      line-height:1.7;
+    }
+
+    .profile-links{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .profile-links a{
+      display:flex;
+      align-items:center;
+      gap:14px;
+
+      padding:14px 18px;
+      border-radius:16px;
+
+      color:#e2e8f0;
+
+      background:rgba(255,255,255,0.04);
+
+     border:1px solid rgba(255,255,255,0.06);
+
+      transition:0.35s;
+    }
+
+    .profile-links i{
+      font-size:18px;
+      color:#22d3ee;
+      width:22px;
+    }
+    
+
+    .profile-links a:hover{
+      transform:translateY(-4px);
+      background:rgba(124,140,255,0.08);
+      border-color:rgba(124,140,255,0.22);
+      color:#22d3ee;
+    }
+
+    /* HERO TEXT */
+
+    .hero-text h3{
+  color:#22d3ee;
+  margin-bottom:22px;
+  letter-spacing:2px;
+  font-size:14px;
+  font-weight:600;
+  text-transform:uppercase;
+}
+
+    .hero-text h1{
+  font-size:52px;
+  line-height:1.08;
+  margin-bottom:28px;
+  font-weight:700;
+  letter-spacing:-1.5px;
+  max-width:780px;
+}
+
+.hero-text h1 span{
+  color:#22d3ee;
+  display:block;
+}
+
+    .hero-line{
+  width:90px;
+  height:2px;
+  border-radius:20px;
+  background:#22d3ee;
+  margin-bottom:30px;
+}
+
+   .hero-text p{
+      color:#cbd5e1;
+      font-size:17px;
+      line-height:1.9;
+      margin-bottom:38px;
+      max-width:680px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 28px;
+      border-radius:14px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .primary-btn{
+      background:#22d3ee;
+      color:#07111f;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 30px rgba(124,140,255,0.3);
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.03);
+      color:#f8fafc;
+    }
+
+    .secondary-btn:hover{
+      border-color:#22d3ee;
+      color:#22d3ee;
+      transform:translateY(-4px);
+    }
+
+    /* SNAPSHOT CARD */
+
+    .analytics-card{
+      border-radius:28px;
+      padding:28px;
+    }
+
+    .analytics-card h2{
+      color:#22d3ee;
+      margin-bottom:24px;
+      font-size:24px;
+    }
+
+   .metric-grid{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .metric-box{
+      padding:30px 28px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.025);
+      border:1px solid rgba(255,255,255,0.05);
+      transition:0.3s;
+}
+
+    .metric-box:hover{
+      transform:translateY(-4px);
+      border-color:rgba(124,140,255,0.22);
+      background:rgba(124,140,255,0.04);
+}
+
+    .metric-box h1{
+      color:#22d3ee;
+      font-size:24px;
+      font-weight:600;
+      margin-bottom:12px;
+      line-height:1.1;
+    }
+
+    .metric-box h3{
+      color:#f8fafc;
+      font-size:19px;
+      font-weight:500;
+      margin-bottom:12px;
+      line-height:1.4;
+    }
+
+    .metric-box p{
+      color:#94a3b8;
+      font-size:14px;
+      line-height:1.9;
+      font-weight:400;
+    }
+
+    /* GENERAL SECTION */
+
+    section{
+      padding:50px 0;
+       scroll-margin-top:60px;
+    }
+
+    .section-title{
+      font-size:46px;
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .section-subtitle{
+      max-width:700px;
+      margin:0 auto 60px;
+      text-align:center;
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+
+    .glass-card{
+      border-radius:24px;
+      padding:35px;
+    }
+
+    .glass-card h3{
+      color:#22d3ee;
+      margin-bottom:18px;
+      font-size:24px;
+    }
+
+    .glass-card p{
+      color:#cbd5e1;
+      line-height:1.9;
+    }
+     
+    /* ABOUT SECTION */
+
+.about-section{
+  padding:100px 0 70px;
+}
+
+.about-heading{
+  padding-left:50px;
+}
+.about-layout{
+  display:grid;
+  grid-template-columns:0.75fr 1.45fr;
+  gap:80px;
+  align-items:center;
+}
+
+.about-label{
+  color:#22d3ee;
+  letter-spacing:2.5px;
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:22px;
+  padding-left:6px;
+}
+
+.about-heading h2{
+  font-size:42px;
+  line-height:1.18;
+  letter-spacing:-1.5px;
+   max-width:420px;
+}
+
+.about-content{
+  max-width:850px;
+}
+
+.about-quote{
+  font-size:28px;
+  line-height:1.6;
+  color:#cbd5e1;
+
+  font-style:italic;
+
+  margin-bottom:50px;
+
+  padding-left:24px;
+
+  border-left:2px solid rgba(124,140,255,0.35);
+}
+
+.about-text p{
+  color:#cbd5e1;
+
+  line-height:2;
+
+  font-size:17px;
+
+  margin-bottom:28px;
+}
+
+.about-highlight{
+  color:#f8fafc !important;
+
+  font-weight:500;
+
+  padding-left:22px;
+
+  border-left:2px solid rgba(124,140,255,0.28);
+
+  margin-top:42px;
+}
+
+.about-points{
+  margin-top:45px;
+  padding-left:24px;
+  border-left:2px solid rgba(124,140,255,0.28);
+}
+
+.about-points h3{
+  font-size:22px;
+  margin-bottom:24px;
+  color:#f8fafc;
+  font-weight:600;
+}
+
+.about-points .point-item{
+  margin-bottom:24px;
+}
+
+
+.point-item p span{
+  color:#22d3ee !important;
+  font-weight:500;
+  display:inline;
+  font-size:15px;
+}
+
+.point-item span{
+  display:block;
+  color:#22d3ee;
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.point-item p{
+  color:#94a3b8;
+  line-height:1.5;
+  font-size:15px;
+}
+
+/* EXPERIENCE SECTION */
+
+.experience-section{
+  padding:100px 0 60px;
+}
+
+
+.section-label{
+  color:#22d3ee;
+  letter-spacing:3px;
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+.experience-heading{
+  margin-bottom:28px;
+  text-align:center;
+}
+
+.experience-heading h2{
+  font-size:38px;
+  line-height:1.2;
+  letter-spacing:-1px;
+}
+
+
+  /* EXPERIENCE RIGHT */
+
+
+  .experience-company{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:24px;
+  padding-left:0;
+}
+
+.experience-company img{
+  width:58px;
+  height:58px;
+  border-radius:14px;
+}
+
+.experience-company h3{
+  font-size:18px;
+  font-weight:650;
+}
+
+.experience-right{
+  position:relative;
+  padding-left:50px;
+}
+
+.experience-right::before{
+  content:'';
+  position:absolute;
+  left:12px;
+  top:10px;
+  width:2px;
+  height:100%;
+  background:rgba(124,140,255,0.25);
+}
+
+/* VERTICAL LINE */
+
+.experience-timeline{
+  position:absolute;
+
+  left:12px;
+
+  top:10px;
+
+  width:2px;
+
+  height:100%;
+
+  background:rgba(124,140,255,0.28);
+}
+
+.role-only{
+  padding-left:0;
+}
+
+.role-only h5{
+  color:#e2e8f0;
+
+  font-size:22px;
+
+  font-weight:600;
+
+  line-height:1.5;
+
+  margin-top:2px;
+
+  margin-bottom:2px;
+}
+/* EXPERIENCE ITEM */
+
+.experience-item{
+  position:relative;
+  margin-bottom:38px;
+}
+
+/* DOT */
+
+.experience-dot{
+  position:absolute;
+  left:-46px;
+  top:8px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#22d3ee;
+  box-shadow:0 0 18px rgba(124,140,255,0.45);
+}
+
+/* TOP ROW */
+
+.experience-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:28px;
+}
+
+/* COMPANY */
+
+.company-info{
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+
+.company-info img{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+}
+
+.company-info h4{
+  font-size:18px;
+  margin-bottom:4px;
+  font-weight:600;
+}
+
+.company-info h5{
+  color:#e2e8f0;
+  font-size:22px;
+  font-weight:600;
+  line-height:1.5;
+  margin-top:-2px;
+  margin-bottom:2px;
+}
+
+.experience-date{
+  display:block;
+  color:#64748b;
+  font-size:16px;
+  margin-top:6px;
+}
+
+/* META */
+
+.experience-meta{
+  text-align:right;
+}
+
+.experience-meta span{
+  display:block;
+  color:#f8fafc;
+  font-size:15px;
+  margin-bottom:4px;
+}
+
+.experience-meta p{
+  color:#64748b;
+  font-size:14px;
+}
+
+/* BULLETS */
+
+.experience-main ul{
+  padding-left:22px;
+}
+
+.experience-main li{
+  color:#cbd5e1;
+  font-size:16px;
+  line-height:1.7;
+  margin-bottom:3px;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-section{
+  padding:100px 0 100px;
+}
+
+/* HEADING */
+
+.skills-heading{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.skills-heading h2{
+  font-size:38px;
+
+  margin-top:18px;
+}
+
+/* GRID */
+
+.skills-grid{
+  display:grid;
+
+  grid-template-columns:repeat(8, minmax(180px, 1fr));
+
+  gap:24px;
+}
+
+/* CARD */
+
+.skill-card{
+  aspect-ratio:1/1;
+
+  background:rgba(15,23,42,0.55);
+
+  border:1px solid rgba(148,163,184,0.14);
+
+  border-radius:24px;
+
+  padding:22px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  gap:16px;
+
+  transition:0.3s ease;
+
+  backdrop-filter:blur(18px);
+}
+/* ICON */
+
+.skill-card i{
+  font-size:24px;
+
+  color:#22d3ee;
+}
+
+/* TEXT */
+
+.skill-card h4{
+  font-size:18px;
+
+  line-height:1.5;
+
+  color:#e2e8f0;
+
+  font-weight:500;
+}
+
+/* HOVER */
+
+.skill-card:hover{
+  transform:translateY(-6px);
+
+  border-color:rgba(124,140,255,0.4);
+
+  box-shadow:0 0 25px rgba(124,140,255,0.12);
+}
+
+/* PYTHON TAG */
+
+.learning-tag{
+  display:block;
+
+  margin-top:4px;
+
+  font-size:10px;
+
+  color:#22d3ee;
+
+  letter-spacing:0.5px;
+
+  text-transform:uppercase;
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects-section{
+  padding:100px 0;
+}
+
+/* HEADING */
+
+.projects-heading{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.projects-heading h2{
+  font-size:38px;
+  margin-bottom:16px;
+}
+
+.projects-heading p{
+  color:#94a3b8;
+  font-size:17px;
+}
+
+.project-details{
+  display:none;
+}
+
+/* FILTERS */
+
+.project-filters{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-bottom:50px;
+  flex-wrap:wrap;
+}
+
+/* FILTER BUTTON */
+
+.filter-btn{
+  padding:12px 22px;
+  border-radius:14px;
+  border:1px solid rgba(124,140,255,0.18);
+  background:rgba(15,23,42,0.55);
+  color:#cbd5e1;
+  cursor:pointer;
+  transition:0.3s ease;
+  font-size:14px;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+  background:rgba(124,140,255,0.12);
+  border-color:rgba(124,140,255,0.35);
+  color:#22d3ee;
+}
+
+/* GRID */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+  justify-content:center;
+  align-items:start;
+}
+
+/* CARD */
+
+.project-card{
+  border-radius:24px;
+  overflow:hidden;
+  transition:0.3s ease;
+  height:fit-content;
+}
+
+.project-card:hover{
+  transform:translateY(-8px);
+}
+
+/* IMAGE */
+
+.project-image{
+  width:100%;
+  height:170px;
+  overflow:hidden;
+  background:#0f172a;
+}
+
+.project-image img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  object-position:top;
+  display:block;
+}
+/* CONTENT */
+
+.project-content{
+  padding:20px;
+}
+
+.project-content h3{
+  font-size:18px;
+  line-height:1.45;
+  margin-bottom:12px;
+}
+
+.project-content p{
+  color:#94a3b8;
+  line-height:1.65;
+  font-size:14px;
+  margin-bottom:14px;
+}
+
+/* TAGS */
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  min-height:64px;
+  align-content:flex-start;
+  margin-bottom:16px;
+}
+
+.tag{
+  padding:6px 12px;
+  border-radius:40px;
+  background:rgba(124,140,255,0.08);
+  color:#22d3ee;
+  font-size:12px;
+}
+
+/* BUTTONS */
+
+.project-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  min-height:70px;
+  align-content:flex-start;
+  margin-bottom:14px;
+}
+/* BUTTON */
+
+.project-btn{
+  padding:10px 16px;
+  border-radius:14px;
+  border:none;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.3s ease;
+  text-decoration:none;
+}
+
+/* PRIMARY */
+
+.primary-project-btn{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#e2e8f0;
+  font-weight:500;
+}
+
+/* SECONDARY */
+
+.secondary-project-btn{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#e2e8f0;
+}
+
+/* DETAILS */
+
+.details-btn{
+  background:transparent;
+  border:1px solid rgba(124,140,255,0.18);
+  color:#cbd5e1;
+}
+
+/* HOVER */
+
+.project-btn:hover{
+  transform:translateY(-3px);
+
+  border-color:rgba(124,140,255,0.35);
+
+  background:rgba(124,140,255,0.10);
+
+  color:#22d3ee;
+
+  box-shadow:0 0 18px rgba(124,140,255,0.10);
+}
+
+
+
+
+
+
+
+
+
+
+/* DETAIL BLOCK */
+
+.details-block{
+  margin-bottom:24px;
+}
+
+.details-block h4{
+  font-size:18px;
+  margin-bottom:12px;
+  color:#f8fafc;
+}
+
+.details-block p,
+.details-block li{
+  color:#94a3b8;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.details-block ul{
+  padding-left:18px;
+}
+
+.top-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  min-height:52px;
+  align-items:flex-start;
+  margin-bottom:14px;
+}
+
+.details-wrapper{
+  width:100%;
+    margin-top:auto;
+}
+
+.details-btn{
+  width:100%;
+}
+
+
+/* =========================
+   PROJECT MODAL
+========================= */
+
+.project-modal{
+  position:fixed;
+
+  inset:0;
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:center;
+
+  z-index:9999;
+}
+
+/* SHOW */
+
+.project-modal.active{
+  display:flex;
+}
+
+/* OVERLAY */
+
+.project-modal-overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.72);
+
+  backdrop-filter:blur(12px);
+}
+
+/* MODAL */
+
+.project-modal-content{
+  position:relative;
+
+  width:min(900px,92%);
+
+  max-height:88vh;
+
+  overflow-y:auto;
+
+  padding:42px;
+
+  border-radius:30px;
+
+  z-index:2;
+
+  animation:modalFade 0.28s ease;
+}
+
+/* CLOSE BUTTON */
+
+.close-modal{
+  position:absolute;
+
+  top:18px;
+
+  right:18px;
+
+  width:42px;
+
+  height:42px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.05);
+
+  color:#f8fafc;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  transition:0.3s ease;
+}
+
+.close-modal:hover{
+  background:rgba(124,140,255,0.12);
+
+  color:#22d3ee;
+}
+
+/* MODAL SCROLLBAR */
+
+.project-modal-content::-webkit-scrollbar{
+  width:8px;
+}
+
+.project-modal-content::-webkit-scrollbar-thumb{
+  background:rgba(124,140,255,0.25);
+
+  border-radius:20px;
+}
+
+/* ANIMATION */
+
+@keyframes modalFade{
+
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+    /* =========================
+   CERTIFICATIONS SECTION
+========================= */
+
+.certifications-section{
+  padding:100px 0;
+}
+
+/* HEADING */
+
+.certifications-heading{
+  text-align:center;
+
+  margin-bottom:55px;
+}
+
+.certifications-heading h2{
+  font-size:38px;
+
+  margin-top:18px;
+}
+
+/* GRID */
+
+.certifications-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4, 1fr);
+
+  gap:24px;
+}
+
+/* CARD */
+
+
+.cert-card{
+  background:rgba(15,23,42,0.55);
+  border:1px solid rgba(148,163,184,0.14);
+  border-radius:22px;
+  padding:24px 20px;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  text-decoration:none;
+  transition:0.3s ease;
+  backdrop-filter:blur(18px);
+}
+
+/* LOGO */
+
+.cert-card img{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+  margin-bottom:22px;
+}
+
+/* TITLE */
+
+.cert-card h4{
+  font-size:16px;
+  line-height:1.6;
+  color:#f8fafc;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+/* PROVIDER */
+
+.cert-card p{
+  color:#94a3b8;
+
+  font-size:15px;
+
+  margin-bottom:18px;
+}
+
+/* LINK */
+
+.cert-card span{
+  color:#22d3ee;
+
+  font-size:14px;
+
+  font-weight:500;
+}
+
+/* HOVER */
+
+.cert-card:hover{
+  transform:translateY(-6px);
+
+  border-color:rgba(124,140,255,0.4);
+
+  box-shadow:0 0 25px rgba(124,140,255,0.12);
+}
+
+/* =========================
+   BEYOND THE WORK SECTION
+========================= */
+
+.beyond-section{
+  padding:100px 0;
+}
+
+/* LAYOUT */
+
+.beyond-layout{
+  display:grid;
+
+  grid-template-columns:0.7fr 1.7fr;
+
+  gap:90px;
+
+  align-items:center;
+}
+
+/* LEFT HEADING */
+
+.beyond-heading{
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  height:100%;
+
+  padding-left:60px;
+}
+
+.beyond-heading h2{
+  font-size:64px;
+
+  line-height:1.05;
+
+  margin-top:18px;
+
+  letter-spacing:-2px;
+}
+
+/* RIGHT CONTENT */
+
+.beyond-achievements{
+  display:flex;
+  flex-direction:column;
+  gap:34px;
+}
+
+/* ITEM */
+
+.achievement-item{
+  display:flex;
+  align-items:flex-start;
+  gap:22px;
+}
+
+/* TITLE */
+
+.achievement-content h3{
+  font-size:24px;
+
+  line-height:1.4;
+
+  margin-bottom:8px;
+
+  color:#f8fafc;
+}
+
+/* DESCRIPTION */
+
+.achievement-content p{
+  color:#94a3b8;
+
+  font-size:16px;
+
+  line-height:1.8;
+
+  margin-bottom:8px;
+
+  max-width:760px;
+}
+
+/* YEAR */
+
+.achievement-content span{
+  color:#22d3ee;
+
+  font-size:13px;
+
+  letter-spacing:0.8px;
+
+  font-weight:500;
+}
+
+/* REMOVE OLD LINES */
+
+.achievement-line{
+  width:2px;
+  min-height:95px;
+  background:linear-gradient(
+    to bottom,
+    #22d3ee,
+    rgba(124,140,255,0.08)
+  );
+  border-radius:20px;
+  flex-shrink:0;
+  margin-top:6px;
+}
+
+   /* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+  padding:100px 0 90px;
+}
+
+/* WRAPPER */
+
+.contact-wrapper{
+  text-align:center;
+  max-width:950px;
+  margin:0 auto;
+}
+
+/* HEADING */
+
+.contact-wrapper{
+  text-align:center;
+  max-width:1050px;
+  margin:0 auto;
+  padding:90px 70px;
+  background:rgba(15,23,42,0.48);
+  border:1px solid rgba(124,140,255,0.14);
+  border-radius:36px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 0 45px rgba(124,140,255,0.05);
+}
+
+
+.contact-wrapper h2 span{
+  color:#22d3ee;
+}
+
+
+.contact-subline{
+  color:#c7d2fe;
+
+  font-size:18px;
+
+  line-height:1.8;
+
+  margin-bottom:40px;
+
+  font-weight:500;
+
+  letter-spacing:0.2px;
+}
+
+
+/* BUTTONS */
+
+    .contact-buttons{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+  flex-wrap:wrap;
+}
+
+/* BUTTON */
+
+.contact-btn{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 28px;
+  border-radius:18px;
+  background:rgba(15,23,42,0.55);
+  border:1px solid rgba(124,140,255,0.18);
+  backdrop-filter:blur(18px);
+  color:#e2e8f0;
+  font-size:16px;
+  transition:0.3s ease;
+}
+
+/* ICON */
+
+.contact-btn i{
+  color:#22d3ee;
+  font-size:18px;
+}
+
+/* HOVER */
+
+.contact-btn:hover{
+  transform:translateY(-4px);
+  border-color:rgba(124,140,255,0.45);
+  box-shadow:0 0 25px rgba(124,140,255,0.12);
+  color:#ffffff;
+}
+
+    /* APPLY GLASS */
+
+    .profile-card,
+    .analytics-card,
+    .glass-card,
+    .skill-card,
+    .project-card,
+    .cert-card,
+    .contact-card{
+      background:rgba(17,24,39,0.72);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    footer{
+  text-align:center;
+  padding:28px;
+  color:#64748b;
+  font-size:14px;
+}
+
+
+/* DESKTOP SECTION SPACING OPTIMIZATION */
+
+.about-section,
+.experience-section,
+.skills-section,
+.projects-section,
+.certifications-section,
+.beyond-section,
+.contact-section{
+  padding:60px 0;
+}
+
+
+
+    /* RESPONSIVE */
+
+    @media(max-width:1200px){
+
+      .hero-content{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text{
+        text-align:center;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:46px;
+      }
+
+      .analytics-card{
+        max-width:500px;
+
+      }
+
+      .profile-card{
+        max-width:350px;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .nav-content{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:16px;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .section-title{
+        font-size:36px;
+      }
+
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    /* TABLET */
+
+@media(max-width:1200px){
+
+  .skills-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+/* MOBILE */
+
+
+
+@media(max-width:1200px){
+
+  .skills-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .skills-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:1200px){
+
+  .hero-content{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .profile-card,
+  .analytics-card{
+    margin:auto;
+  }
+
+}
+@media(max-width:768px){
+
+  /* GENERAL */
+
+  section{
+    padding:70px 0;
+  }
+
+  .container{
+    width:92%;
+  }
+
+  /* NAVBAR */
+
+  .nav-content{
+    flex-direction:column;
+    gap:18px;
+    padding:18px 0;
+  }
+
+  .nav-links{
+      row-gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+  }
+
+  .nav-links a{
+    font-size:12px;
+  }
+
+  .resume-btn{
+    padding:10px 16px;
+  }
+
+  /* HERO */
+
+  .hero{
+    padding-top:190px;
+    min-height:auto;
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  .profile-card,
+  .analytics-card{
+    max-width:100%;
+    margin:0;
+  }
+
+  .hero-text{
+    text-align:center;
+    padding-top:0;
+  }
+
+  .hero-text h1{
+    font-size:40px;
+    line-height:1.15;
+  }
+
+  .hero-subline{
+    font-size:20px;
+  }
+
+  .hero-line{
+    margin:24px auto;
+  }
+
+  .hero-text p{
+    font-size:15px;
+    line-height:1.9;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  /* ABOUT */
+
+  .about-layout{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .about-heading{
+    padding-left:0;
+  }
+
+  .about-heading h2{
+    font-size:34px;
+    max-width:100%;
+  }
+
+  .about-text p{
+    font-size:15px;
+  }
+
+  .about-points{
+    padding-left:18px;
+  }
+
+  /* EXPERIENCE */
+
+  .experience-right{
+    padding-left:34px;
+  }
+
+  .experience-dot{
+    left:-30px;
+  }
+
+  .experience-top{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .experience-meta{
+    text-align:left;
+  }
+
+  /* SKILLS */
+
+  .skills-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+
+  /* PROJECTS */
+
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* CERTIFICATIONS */
+
+  .certifications-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* BEYOND */
+
+  .beyond-layout{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .beyond-heading{
+    padding-left:0;
+  }
+
+  .beyond-heading h2{
+    font-size:42px;
+  }
+
+  /* CONTACT */
+
+  .contact-wrapper{
+    padding:60px 24px;
+  }
+
+  .contact-wrapper h2{
+    font-size:32px;
+    line-height:1.3;
+  }
+
+}
+
+
+
+
+
+  </style>
+
+
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-content">
+
+      <div class="logo">
+        Purti
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="files/Resume_Purti.pdf" target="_blank" class="resume-btn">
+            Download Resume
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id = "home">
+
+    <div class="container hero-content">
+
+      <!-- PROFILE CARD -->
+
+      <div class="profile-card glass">
+
+        <img src="images/profile.jpg" alt="Purti" class="profile-photo">
+
+        <h2>Purti</h2>
+
+      
+        <div class="profile-links">
+
+            <a href="mailto:m.purtimittal@gmail.com">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>m.purtimittal@gmail.com</span>
+
+          </a>
+
+            <a href="https://github.com/PurtiMittal" target="_blank">
+
+            <i class="fa-brands fa-github"></i>
+
+            <span>github.com/PurtiMittal</span>
+
+          </a>
+
+            <a href="https://www.linkedin.com/in/purtimittal/" target="_blank">
+
+            <i class="fa-brands fa-linkedin"></i>
+
+            <span>linkedin.com/in/purtimittal/</span>
+
+          </a>
+
+        </div>
+      </div>
+      <!-- HERO TEXT -->
+
+      <div class="hero-text">
+
+        <h1>
+           <div>Turning Numbers into </div>
+          <span>Narratives</span>
+           <div class="hero-subline">
+               SQL · Power BI · Excel
+          </div>
+          
+        </h1>
+
+        <div class="hero-line"></div>
+        <p>
+          Strong background in finance, large datasets, and executive reporting, along with hands-on practice in building analytical projects that turn raw data into insight-driven outputs using SQL, Power BI, DAX, and Excel.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn primary-btn">
+            Projects Hub
+          </a>
+
+
+        </div>
+
+      </div>
+
+      <!-- SNAPSHOT CARD -->
+
+      <div class="analytics-card glass">
+
+        <h2>Professional Snapshot</h2>
+
+          
+          <div class="metric-grid">
+
+             <!-- EXPERIENCE CARD -->
+
+              <div class="metric-box">
+                <h1>2.5+ Years</h1>
+                <h3>Corporate Experience</h3>
+                <p>HCLTech (Finance Executive)</p>
+               </div>
+
+            <!-- PROJECTS CARD -->
+
+              <div class="metric-box">
+                <h1>5+
+                </h1>
+                <h3>Analytics Projects</h3>
+                <p>• SQL • Power BI • Excel</p>
+              </div>
+
+           <!-- INDUSTRIES CARD -->
+
+              <div class="metric-box">
+                <h1> 7 </h1>
+                <h3>Industries Covered</h3>
+              
+              </div>
+
+          </div>
+  
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+
+<section id="about" class="about-section">
+
+  <div class="container about-layout">
+
+    <!-- LEFT SIDE -->
+
+    <div class="about-heading">
+
+      <p class="about-label">ABOUT ME</p>
+
+      <h2>
+        A Blend of Finance Knowledge
+        and Analytical Skills
+      </h2>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="about-content">
+
+      <!-- QUOTE -->
+
+
+      <!-- MAIN CONTENT -->
+
+      <div class="about-text">
+
+        <p>
+          Hey! I'm Purti, a detail-oriented professional with 2.5+ years at HCLTech, where I worked with large financial datasets across a $4Bn+ portfolio, validated automated system outputs and translated complex data into clear insights.
+        </p>
+
+        <p>
+          Working closely with data in a real business environment sparked a deeper interest in analytics, leading to learning SQL and building Power BI dashboards, along with end-to-end models using Excel, Power Pivot and DAX.
+        </p>
+        
+        <p>
+          I'm currently seeking Data Analyst roles where I can bring together domain knowledge, technical skills and problem-solving curiosity to help teams make smarter, data-driven decisions.
+        </p>
+
+      </div>
+
+      
+ <!-- WHAT SETS ME APART -->
+
+<div class="about-points">
+
+  <h3>What Sets Me Apart</h3>
+
+  <div class="point-item">
+
+    <p>
+      <span>Strong Business Understanding:</span> I've worked with real business data at a corporate level - so I understand what the numbers actually mean, not just how to calculate them.
+    </p>
+
+  </div>
+
+  <div class="point-item">
+
+    <p>
+      <span>Hands-on Analytics Skills:</span> I've hands-on experience with SQL, Power BI, Excel, Power Pivot and DAX through independent analytical projects and reporting work.
+    </p>
+
+  </div>
+
+  <div class="point-item">
+
+    <p>
+      <span>Insight-Focused Thinking:</span> I don't just clean data — I dig into it, find patterns and turn them into answers that actually help.
+    </p>
+
+  </div>
+
+  <div class="point-item">
+
+    <p>
+      <span>Accuracy First:</span> I take data quality seriously. Every output I deliver is structured, clean and easy to trust.
+    </p>
+
+  </div>
+
+  <div class="point-item">
+
+    <p>
+      <span>Always Growing:</span> I keep building new projects and learning continuously - because analysts never stop improving.
+    </p>
+
+  </div>
+
+</div>     
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EXPERIENCE SECTION -->
+
+<section id="experience" class="experience-section">
+
+  <div class="container">
+
+
+
+    <!-- EXPERIENCE WRAPPER -->
+
+    <div class="experience-wrapper">
+
+
+
+    <!-- HEADER -->
+
+<div class="experience-heading">
+
+
+  <h2>Professional Journey</h2>
+
+</div>
+
+<!-- RIGHT CONTENT -->
+
+<div class="experience-right">
+
+ <div class="experience-company">
+
+  <img src="images/hcltech_logo.jpg" alt="HCLTech Logo">
+
+  <h3>HCLTech</h3>
+
+</div>
+
+  <!-- EXPERIENCE ITEM 1 -->
+
+  <div class="experience-item">
+
+    <div class="experience-dot"></div>
+
+    <div class="experience-main">
+
+      <!-- TOP -->
+
+      <div class="experience-top">
+
+        <div class="company-info">
+
+       
+
+          <div>
+
+            <h5>Finance Executive</h5>
+              <span class="experience-date">
+                (Jan 2025 – Mar 2026)
+                </span>
+          </div>
+
+        </div>
+
+       
+
+      </div>
+
+      <!-- BULLETS -->
+
+      <ul>
+
+        <li>
+          Developed a CFO-facing dashboard by processing billing, collection and revenue data into decision-ready view, enabling leadership to derive actionable insights across a $4Bn+ portfolio.       
+        </li>
+        <li>
+          Validated large financial datasets using Excel to identify calculation gaps in automated revenue outputs,  implemented corrective measures to reduce discrepancies, data accuracy validated at 99% during audit.  
+        </li>
+        <li>
+       Led end-to-end UAT for automated revenue report - designed test cases, validated outputs before go-live, reporting time reduced from 1.5 hours to 2 minutes (~98% efficiency gain).        
+        </li>
+        <li>
+        Designed a comprehensive report providing insights on collection forecast trends and structured visibility into recovery pipelines to the leadership - built entirely on raw inputs received.        
+        </li>
+        <li>
+        Built monthly billing status reports to track billing status, highlighted backlog by multiple dimensions and identified delays caused by process issues to improve invoicing planning. 
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- EXPERIENCE ITEM 2 -->
+
+  <div class="experience-item">
+
+    <div class="experience-dot"></div>
+
+    <div class="experience-main">
+
+      <div class="experience-top">
+
+       <div class="role-only">
+
+          <h5>Graduate Trainee</h5>
+
+          <span class="experience-date">
+            (Aug 2023 – Dec 2024)
+          </span>
+
+          </div>
+
+       
+
+      </div>
+
+      <ul>
+        <li>
+          Analyzed $7Mn+ at risk receivables to identify key risk segments and monitor collection performance.
+        </li>
+        <li>
+          Reconciled CRM and SAP datasets using Excel to identify and resolve data discrepancies, resulting in improved data integrity from ~85% to ~95%. 
+        </li>
+        <li>
+          Validated and reported key metrics such as RPO and ARR in collaboration with Global Business Operations team to forecast financial performance. 
+        </li>
+        <li>
+          Supported internal, statutory, limited review and local audits, ensured 100% on-time and accurate submission of all required documentation. 
+        </li>
+        <li>
+          Analyzed and reported revenue comparisons under ASC 606 vs. ASC 605, prepared DR Amortization Schedules. 
+        </li>
+        <li>
+        Validated forecasted vs actual revenue at contract level, identified variances and provided data-backed corrections to forecasting team, contributed to ~95% forecast accuracy.
+        </li>
+
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+      
+    </div>
+
+  </div>
+  </div>
+
+
+
+<!-- SKILLS SECTION -->
+
+<section class="skills-section" id="skills">
+
+  <div class="container">
+
+    <!-- HEADING -->
+
+    <div class="skills-heading">
+
+
+      <h2>
+        Skills & Strengths
+      </h2>
+
+    </div>
+
+    <!-- SKILLS GRID -->
+
+    <div class="skills-grid">
+
+      <!-- SQL -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h4>SQL</h4>
+      </div>
+
+       <!-- POWER BI -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-chart-column"></i>
+        <h4>Power BI</h4>
+      </div>
+
+      <!-- EXCEL -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-table"></i>
+        <h4>Advanced Excel</h4>
+      </div>
+
+          <!-- DAX -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h4>DAX</h4>
+      </div>
+
+      <!-- POWER QUERY -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-filter"></i>
+        <h4>Power Query</h4>
+      </div>
+
+      <!-- POWER PIVOT -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-cube"></i>
+        <h4>Power Pivot</h4>
+      </div>
+
+      <!-- DATA MODELLING -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-diagram-project"></i>
+        <h4>Data Modelling</h4>
+      </div>
+
+  
+
+      <!-- DATA CLEANING -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-broom"></i>
+        <h4>Data Cleaning</h4>
+      </div>
+
+     
+
+      <!-- DATA ANALYSIS -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+        <h4>Data Analysis</h4>
+      </div>
+
+      <!-- ATTENTION TO DETAIL -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-bullseye"></i>
+        <h4>Attention to Detail</h4>
+      </div>
+
+      <!-- BUSINESS UNDERSTANDING -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-briefcase"></i>
+        <h4>Business Understanding</h4>
+      </div>
+
+      <!-- PROBLEM SOLVING -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h4>Problem Solving</h4>
+      </div>
+
+      <!-- COLLABORATION -->
+
+      <div class="skill-card">
+        <i class="fa-solid fa-users"></i>
+        <h4>Cross-team Collaboration</h4>
+      </div>
+
+      <!-- PYTHON -->
+
+      <div class="skill-card">
+
+        <i class="fa-brands fa-python"></i>
+
+        <h4>
+          Python
+
+          <span class="learning-tag">
+            Currently Learning
+          </span>
+
+        </h4>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- PROJECTS SECTION -->
+
+<section class="projects-section" id="projects">
+
+  <div class="container">
+
+    <!-- HEADING -->
+
+    <div class="projects-heading">
+
+      <h2>Project Hub</h2>
+
+    </div>
+
+    <!-- FILTERS -->
+
+    <div class="project-filters">
+
+      <button class="filter-btn active" data-filter="all">
+        All
+      </button>
+
+      <button class="filter-btn" data-filter="powerbi">
+        Power BI
+      </button>
+
+      <button class="filter-btn" data-filter="sql">
+        SQL
+      </button>
+
+      <button class="filter-btn" data-filter="excel">
+        Excel
+      </button>
+
+    </div>
+
+    <!-- PROJECT GRID -->
+
+    <div class="project-grid">
+
+      <!-- PROJECT CARD -->
+
+      <div class="project-card glass" data-category="powerbi">
+
+        <!-- IMAGE -->
+
+        <div class="project-image">
+
+          <img src="images/powerbi_cabs_dashboard.png" alt="Cab Dashboard">
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="project-content">
+
+          <h3>
+            Cabs Service Performance & Passenger Behaviour Analysis
+          </h3>
+
+          <p>
+            An interactive Power BI dashboard analyzing operational performance, revenue trends, passenger growth and customer experience for GoodCabs – a cab service provider.
+          </p>
+
+          <!-- TAGS -->
+
+          <div class="tags">
+
+            <div class="tag">Power BI</div>
+
+            <div class="tag">DAX</div>
+
+            <div class="tag">Power Query</div>
+
+            <div class="tag">Data Modeling</div>
+
+            <div class="tag">Star Schema</div>
+
+          </div>
+
+          <!-- BUTTONS -->
+
+          <div class="project-buttons top-buttons">
+
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiNTkxMzkxNWMtNTk1Zi00M2U4LTk0ZmUtOTVjODU4ZTAzY2NmIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"
+               target="_blank"
+               class="project-btn primary-project-btn">
+
+              Live Dashboard
+
+            </a>
+
+            <a href="https://github.com/PurtiMittal/Cabs-Service-Performance-and-Passenger-Behaviour-Analysis-PowerBI-Dashboard"
+               target="_blank"
+               class="project-btn secondary-project-btn">
+
+              GitHub
+
+            </a>
+              <div class="details-wrapper">
+
+                <button class="project-btn details-btn">
+                   View Details
+                </button>
+
+              </div>
+
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+
+          <div class="project-details">
+
+            <div class="details-block">
+
+              <h4>Overview</h4>
+
+              <p>
+                A 6-page unguided Power BI dashboard built for GoodCabs — a simulated cab service operating across 10 tier-2 Indian cities. The dashboard was designed for Executive, Operations, Finance, Marketing and CX stakeholders.
+              </p>
+
+            </div>
+
+            <div class="details-block">
+
+              <h4>Work Highlights</h4>
+
+              <ul>
+
+                <li>Designed a Galaxy Schema across 8 tables</li>
+
+                <li>Built 80+ DAX measures for dynamic KPIs and insights</li>
+
+                <li>Developed 8 bookmark toggles for interactive switching</li>
+
+                <li>Used field parameters for dynamic metric selection</li>
+
+                <li>Created 15+ tooltip pages for contextual insights</li>
+
+                <li>Built dynamic filter tracking using DAX</li>
+
+              </ul>
+
+            </div>
+
+            <div class="details-block">
+
+              <h4>Key Business Insights</h4>
+
+              <ul>
+
+                <li>Trip volumes dropped 13.8% in June — steepest decline in H1</li>
+
+                <li>Passenger acquisition targets missed in 5 out of 6 months</li>
+
+                <li>Customer ratings declined continuously from January to June</li>
+
+                <li>Jaipur contributed 34% of overall revenue</li>
+
+                <li>Top 3 cities generated 60% of total revenue</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- SQL PROJECT CARD -->
+
+<div class="project-card glass" data-category="sql">
+
+  <!-- IMAGE -->
+
+  <div class="project-image">
+
+    <img src="images/sql_customer_segmentation_interest_analysis.png"
+         alt="Customer Segmentation SQL Project">
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="project-content">
+
+    <h3>
+      Customer Segmentation & Interest Analysis
+    </h3>
+
+    <p>
+      End-to-end SQL analysis uncovering trends, volatility patterns and customer behavior insights for Fresh Segments - a company tracking online audience interaction.
+    </p>
+
+    <!-- TAGS -->
+
+    <div class="tags">
+
+      <div class="tag">MS SQL Server</div>
+
+      <div class="tag">Data Cleaning</div>
+
+      <div class="tag">Data Validation</div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+   <div class="project-buttons top-buttons">
+
+      <a href="https://github.com/PurtiMittal/Customer-Segmentation-and-Interest-Analysis-SQL"
+         target="_blank"
+         class="project-btn secondary-project-btn">
+
+        GitHub
+
+      </a>
+
+<div class="details-wrapper">
+
+  <button class="project-btn details-btn">
+    View Details
+  </button>
+
+</div>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <div class="project-details">
+
+      <!-- WHAT I WORKED THROUGH -->
+
+      <div class="details-block">
+
+        <h4>What I Worked Through</h4>
+
+        <ul>
+
+          <li>
+            Started with a raw interest_metrics table that needed fixing before any analysis could happen.
+          </li>
+
+          <li>
+            Converted month_year to DATE (1st day of the corresponding month).
+          </li>
+
+          <li>
+            Identified and removed 1194 null records after taking a backup.
+          </li>
+
+          <li>
+            Resolved 188 apparent date discrepancies that turned out to be a formatting artefact, not real errors.
+          </li>
+
+          <li>
+            Built a quality filter using cumulative percentage analysis to identify that interests present for 6+ months account for 90%+ of the dataset.
+          </li>
+
+          <li>
+            Profiled the customer segment using composition and index values.
+          </li>
+
+          <li>
+            Identified the most consistent and most volatile interests.
+          </li>
+
+          <li>
+            Built a 3-month rolling average output with prior month context matching Danny's expected output exactly.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- TECHNICAL HIGHLIGHTS -->
+
+      <div class="details-block">
+
+        <h4>Technical Highlights</h4>
+
+        <ul>
+
+          <li>
+            Multi-level CTEs to keep complex logic readable across all 4 sections.
+          </li>
+
+          <li>
+            Used DENSE_RANK() for monthly rankings.
+          </li>
+
+          <li>
+            Used FIRST_VALUE() to retrieve boundary month_year values without extra joins.
+          </li>
+
+          <li>
+            Used LAG() for rolling prior-month context.
+          </li>
+
+          <li>
+            Used STDEV() for volatility measurement.
+          </li>
+
+          <li>
+            Used SUM() OVER() for cumulative percentage analysis.
+          </li>
+
+          <li>
+            Used ROWS BETWEEN 2 PRECEDING AND CURRENT ROW for rolling averages.
+          </li>
+
+          <li>
+            Used DECLARE to avoid unnecessary nested subqueries.
+          </li>
+
+          <li>
+            Used RANK() instead of ROW_NUMBER() wherever ties needed to be retained.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- KEY FINDING -->
+
+      <div class="details-block">
+
+        <h4>Key Finding</h4>
+
+        <p>
+          Detected a 70%+ drop in top-tier engagement from late 2018 to mid 2019 - indicating a structural decline rather than seasonal fluctuation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- EXCEL PROJECT CARD -->
+
+<div class="project-card glass" data-category="excel">
+
+  <!-- IMAGE -->
+
+  <div class="project-image">
+
+    <img src="images/excel_ecommerce_dashboard.png"
+         alt="E-Commerce Excel Dashboard">
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="project-content">
+
+    <h3>
+      E-Commerce Performance Analysis (Excel)
+    </h3>
+
+    <p>
+      End to end Excel solution uncovering revenue trends, target achievements, YoY growth, category & regional performance gaps for an e-commerce platform.
+    </p>
+
+    <!-- TAGS -->
+
+    <div class="tags">
+
+      <div class="tag">Advanced Excel</div>
+
+      <div class="tag">Power Pivot</div>
+
+      <div class="tag">DAX</div>
+
+      <div class="tag">Data Modelling</div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <div class="top-buttons">
+
+      <a href="files/E-Commerce_Performance_Analysis_(Excel_Dashboard).xlsx"
+         target="_blank"
+         class="project-btn primary-project-btn">
+
+        View Dashboard
+
+      </a>
+
+      <a href="https://github.com/PurtiMittal/E-Commerce-Performance-Analysis-Excel-Dashboard"
+         target="_blank"
+         class="project-btn secondary-project-btn">
+
+        GitHub
+
+      </a>
+
+    </div>
+
+    <!-- DETAILS BUTTON -->
+
+    <div class="details-wrapper">
+
+      <button class="project-btn details-btn">
+
+        View Details
+
+      </button>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <div class="project-details">
+
+      <!-- OVERVIEW -->
+
+      <div class="details-block">
+
+        <h4>Overview</h4>
+
+        <p>
+          E-commerce sales analysis project built in Excel covering 15,000 orders across 3 years, 2 product categories, 4 regions and 15 states in India.
+        </p>
+
+      </div>
+
+      <!-- DATA CLEANING -->
+
+      <div class="details-block">
+
+        <h4>Data Cleaning</h4>
+
+        <ul>
+
+          <li>
+            Resolved state name inconsistencies and corrected subcategory labels.
+          </li>
+
+          <li>
+            Fixed data types and Excel date serial errors across all 4 raw tables.
+          </li>
+
+          <li>
+            Used PROPER(), TRIM(), nested IF(), DATE(), DATEVALUE() and Replace for cleaning and transformation.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- TECHNICAL HIGHLIGHTS -->
+
+      <div class="details-block">
+
+        <h4>Technical Highlights</h4>
+
+        <ul>
+
+          <li>
+            Designed a Galaxy Schema in Power Pivot with a Calendar table.
+          </li>
+
+          <li>
+            Built 24 dynamic DAX measures for KPIs and YoY analysis.
+          </li>
+
+          <li>
+            Used CALCULATE() and SAMEPERIODLASTYEAR() for time intelligence.
+          </li>
+
+          <li>
+            Developed an interactive dashboard with 4 slicers and 5 KPI Cards.
+          </li>
+
+          <li>
+            Built 7 visuals including waterfall bridge, scatter plot and RAG charts.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- KEY INSIGHT -->
+
+      <div class="details-block">
+
+        <h4>Key Insight</h4>
+
+        <p>
+          Electronics contributes ~70% of revenue but operates at only 12.7% margin, while Appliances delivers 19.2% margin — highlighting a clear volume vs profitability trade-off.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FASHION RETAIL SQL PROJECT -->
+
+<div class="project-card glass" data-category="sql">
+
+  <!-- IMAGE -->
+
+  <div class="project-image">
+
+    <img src="images/sql_fashion_retail_dashboard.png"
+         alt="Fashion Retail SQL Analysis">
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="project-content">
+
+    <h3>
+      Fashion Retail Sales & Product Analysis
+    </h3>
+
+    <p>
+      End to end SQL analysis for Balanced Tree Clothing Co. - a leading fashion company - uncovering revenue trends, product performance, customer spending patterns and cross-sell opportunities.
+    </p>
+
+    <!-- TAGS -->
+
+    <div class="tags">
+
+      <div class="tag">MS SQL Server</div>
+
+      <div class="tag">MIS Reporting</div>
+
+      <div class="tag">Data Cleaning</div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <div class="top-buttons">
+
+      <a href="https://github.com/PurtiMittal/Fashion-Retail-Sales-Product-Analysis-SQL-"
+         target="_blank"
+         class="project-btn secondary-project-btn">
+
+        GitHub
+
+      </a>
+
+    </div>
+
+    <!-- DETAILS BUTTON -->
+
+    <div class="details-wrapper">
+
+      <button class="project-btn details-btn">
+
+        View Details
+
+      </button>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <div class="project-details">
+
+      <!-- OVERVIEW -->
+
+      <div class="details-block">
+
+        <h4>Overview</h4>
+
+        <p>
+          Conducted an end to end SQL analysis on a fictional fashion retail dataset (Balanced Tree Clothing Co) covering $1.29 Mn gross revenue, 2500 transactions and 45,216 units sold as part of Danny Ma's 8 Week SQL Challenge.
+        </p>
+
+      </div>
+
+      <!-- TECHNICAL HIGHLIGHTS -->
+
+      <div class="details-block">
+
+        <h4>Technical Highlights</h4>
+
+        <ul>
+
+          <li>
+            Used DENSE_RANK(), PERCENTILE_CONT(), OVER/PARTITION BY, complex joins and DECLARE statements.
+          </li>
+
+          <li>
+            Built multi-level CTEs for a parameterized executive reporting suite.
+          </li>
+
+          <li>
+            Developed self join logic to identify product triplets bought together across 2500 transactions.
+          </li>
+
+          <li>
+            Built a data cleaning pipeline to resolve import-stage integrity issues.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- WHAT I ANALYZED -->
+
+      <div class="details-block">
+
+        <h4>What I Analyzed</h4>
+
+        <ul>
+
+          <li>
+            Gross revenue, total discounts and overall sales volume.
+          </li>
+
+          <li>
+            Order value distribution, average basket size and member vs non-member spend behavior.
+          </li>
+
+          <li>
+            Revenue rankings across product, segment and category levels.
+          </li>
+
+          <li>
+            Identified the most frequently bought together product triplet.
+          </li>
+
+          <li>
+            Flagged underperforming products for promotional review.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- WHAT MAKES THIS DIFFERENT -->
+
+      <div class="details-block">
+
+        <h4>What Makes This Project Different</h4>
+
+        <p>
+          The entire analysis is packaged into a single executive reporting script — simply change the date range, run the script and generate a formatted business summary with KPIs, rankings, segment performance and cross-sell analysis automatically.
+        </p>
+
+      </div>
+
+      <!-- KEY INSIGHT -->
+
+      <div class="details-block">
+
+        <h4>Key Insight</h4>
+
+        <p>
+          Identified that Teal Button Up Shirt contributed only 8.99% of Shirts segment revenue while the top-selling product triplet was co-purchased 352 times — highlighting both cross-sell opportunities and weak-performing SKUs.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- RESTAURANT SQL PROJECT -->
+
+<div class="project-card glass" data-category="sql">
+
+  <!-- IMAGE -->
+
+  <div class="project-image">
+
+    <img src="images/sql_restaurant_analysis.png"
+         alt="Restaurant SQL Analysis">
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="project-content">
+
+    <h3>
+      Restaurant Revenue & Loyalty Program Analysis
+    </h3>
+
+    <p>
+      SQL analysis on a small Japanese restaurant's transaction data to answer business questions around customer behavior, menu performance and loyalty program effectiveness.
+    </p>
+
+    <!-- TAGS -->
+
+    <div class="tags">
+
+      <div class="tag">MS SQL Server</div>
+
+      <div class="tag">CTEs</div>
+
+      <div class="tag">Window Functions</div>
+
+      <div class="tag">Data Analysis</div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <div class="top-buttons">
+
+      <a href="https://github.com/PurtiMittal/Restaurant-Revenue-Consumer-Behaviour-SQL-Analysis"
+         target="_blank"
+         class="project-btn secondary-project-btn">
+
+        GitHub
+
+      </a>
+
+    </div>
+
+    <!-- DETAILS BUTTON -->
+
+    <div class="details-wrapper">
+
+      <button class="project-btn details-btn">
+
+        View Details
+
+      </button>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <div class="project-details">
+
+      <!-- OVERVIEW -->
+
+      <div class="details-block">
+
+        <h4>Overview</h4>
+
+        <p>
+          SQL analysis project built on a Japanese restaurant's transaction dataset to evaluate customer spending patterns, menu popularity and loyalty program effectiveness through targeted business questions.
+        </p>
+
+      </div>
+
+      <!-- TECHNICAL HIGHLIGHTS -->
+
+      <div class="details-block">
+
+        <h4>Technical Highlights</h4>
+
+        <ul>
+
+          <li>
+            Built using CTEs, window functions and conditional aggregations in MS SQL Server.
+          </li>
+
+          <li>
+            Used DENSE_RANK() and PARTITION BY for ranking and segmentation analysis.
+          </li>
+
+          <li>
+            Applied DATEADD() for time-window based loyalty logic.
+          </li>
+
+          <li>
+            Used STRING_AGG() for multi-value row concatenation.
+          </li>
+
+          <li>
+            Developed alternate solutions for tie-handling and duplicate order scenarios.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- WHAT I ANALYZED -->
+
+      <div class="details-block">
+
+        <h4>What I Analyzed</h4>
+
+        <ul>
+
+          <li>
+            Total spend and visit frequency per customer.
+          </li>
+
+          <li>
+            First and last orders relative to membership join date.
+          </li>
+
+          <li>
+            Most popular menu items overall and customer-wise.
+          </li>
+
+          <li>
+            Loyalty points calculation under different multiplier schemes.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- KEY INSIGHT -->
+
+      <div class="details-block">
+
+        <h4>Key Insight</h4>
+
+        <p>
+          Customer B generated fewer total sales than Customer A but earned higher loyalty points due to frequent Sushi purchases. The first-week 2x multiplier also showed a visible impact on Customer A's post-membership ordering behavior.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+</section>
+ 
+  <!-- CERTIFICATIONS SECTION -->
+
+<section class="certifications-section" id="certifications">
+
+  <div class="container">
+
+    <!-- HEADING -->
+
+    <div class="certifications-heading">
+
+  
+      <h2>
+        Certifications & Credentials
+      </h2>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="certifications-grid">
+
+      <!-- CARD 1 -->
+
+      <a href="https://www.hackerrank.com/certificates/iframe/1631c745195f"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/hackerrank.jpg" alt="HackerRank">
+
+        <h4>Certificate of Accomplishment - SQL (Advanced)</h4>
+
+        <p>HackerRank</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 2 -->
+
+      <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0ODU5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvMTAwNDc1NzFfMTAzNDA5MTZfMTc3NTE5NzAwMTg2My5wbmciLCJ1c2VybmFtZSI6IlB1cnRpIn0%3D"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/simplilearn.png" alt="Simplilearn">
+
+        <h4>SQL for Data Analysis</h4>
+
+        <p>Simplilearn</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 3 -->
+
+      <a href="https://learnsql.com/files/course-certificate/auupZdWqgsQuKECBWVXQTfGisEIqNasdOjMERkkD"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/learnsql.jpg" alt="LearnSQL">
+
+        <h4>Certificate of Competency (SQL)</h4>
+
+        <p>LearnSQL.com</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 4 -->
+
+      <a href="https://www.coursera.org/account/accomplishments/certificate/KO0GHR4443WK"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/coursera.png" alt="Coursera">
+
+        <h4>Advanced Microsoft Power BI</h4>
+
+        <p>Coursera</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 5 -->
+
+      <a href="https://codebasics.io/certificate/CB-49-570613"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/codebasics.jpg" alt="CodeBasics">
+
+        <h4>Power BI Data Analytics</h4>
+
+        <p>CodeBasics</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 6 -->
+
+      <a href="https://www.analystbuilder.com/achievements/verify/OAC874BRRP?r=x8C2BPxAvSNJq75XNDjYWB9vo"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/analyst_builder.jpg" alt="Analyst Builder">
+
+        <h4>Advanced Excel for Automation</h4>
+
+        <p>Analyst Builder</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 7 -->
+
+      <a href="https://www.analystbuilder.com/achievements/verify/XRFBGRPBTP?r=WUiqgCnXJkUhoz52jZbJ1Wer2"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/analyst_builder.jpg" alt="Analyst Builder">
+
+        <h4>Excel for Data Analytics</h4>
+
+        <p>Analyst Builder</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+      <!-- CARD 8 -->
+
+      <a href="http://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/eLeZHcwX7CqLhhps7_Goldman%20Sachs_2oqL7Kg2BynhmM9Lp_1677236415986_completion_certificate.pdf"
+         target="_blank"
+         class="cert-card">
+
+        <img src="images/forage.jpg" alt="Goldman Sachs">
+
+        <h4>Excel Skills for Business - Virtual Experience Program by Goldman Sachs</h4>
+
+        <p>Forage</p>
+
+        <span>View Credential →</span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BEYOND THE WORK SECTION -->
+
+<section class="beyond-section" id="achievements">
+
+  <div class="container">
+
+    <div class="beyond-layout">
+
+      
+      <!-- LEFT HEADING -->
+
+      <div class="beyond-heading">
+
+      
+        <h2>
+          Beyond<br>
+          The Work
+        </h2>
+
+      </div>
+
+
+      <!-- ACHIEVEMENTS LEFT -->
+      <div class="beyond-achievements">
+
+        <!-- ITEM 1 -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-line"></div>
+
+          <div class="achievement-content">
+
+            <h3>2Good Award - HCLTech</h3>
+
+            <p>
+              Recognized for distinguished performance and consistent contribution across two consecutive years at HCLTech.
+            </p>
+
+            <span>2025</span>
+
+          </div>
+
+        
+
+        </div>
+
+        <!-- ITEM 2 -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-line"></div>
+
+          <div class="achievement-content">
+
+            <h3>LIVE WIRE Recognition - HCLTech</h3>
+
+            <p>
+              Awarded for demonstrating proactive ownership, initiative and commitment towards excellence.
+            </p>
+
+            <span>2025</span>
+
+          </div>
+
+        
+        </div>
+
+        <!-- ITEM 3 -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-line"></div>
+
+          <div class="achievement-content">
+
+            <h3>Letter of Recommendation - Vishalakshi Foundation</h3>
+
+            <p>
+              Received formal recognition for exemplary leadership and contribution while serving as Vice President.
+            </p>
+
+            <span>2024</span>
+
+          </div>
+
+
+        </div>
+
+        <!-- ITEM 4 -->
+
+        <div class="achievement-item">
+
+            <div class="achievement-line"></div>
+
+          <div class="achievement-content">
+
+            <h3>Volunteer Recognition - Vishalakshi Foundation</h3>
+
+            <p>
+              Honored with Certificates of Appreciation & Kindness and recognized twice as Volunteer of the Month for dedication and community impact.
+            </p>
+
+            <span>2023</span>
+
+          </div>
+
+      
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section" id="contact">
+
+  <div class="container">
+
+    <div class="contact-wrapper">
+
+      <!-- LABEL -->
+
+      <p class="section-label">
+        CONTACT ME
+      </p>
+
+      <!-- HEADING -->
+
+      <h2>
+        Your data has a story.
+        <span>I will help you explore it.</span>
+      </h2>
+
+        <p class="contact-subline">
+          Currently open to Data Analyst roles - let's connect!
+        </p>
+      <!-- BUTTONS -->
+
+      <div class="contact-buttons">
+
+        <a href="mailto:m.purtimittal@gmail.com" class="contact-btn">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <span>E-mail</span>
+
+        </a>
+
+        <a href="https://www.linkedin.com/in/purtimittal/"
+           target="_blank"
+           class="contact-btn">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+          <span>LinkedIn</span>
+
+        </a>
+
+        <a href="https://github.com/PurtiMittal"
+           target="_blank"
+           class="contact-btn">
+
+          <i class="fa-brands fa-github"></i>
+
+          <span>GitHub</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <footer>
+    © 2026 Purti | Data Analytics Portfolio
+  </footer>
+
+<!-- PROJECT MODAL -->
+
+<div class="project-modal" id="projectModal">
+
+  <!-- OVERLAY -->
+
+  <div class="project-modal-overlay"></div>
+
+  <!-- MODAL CONTENT -->
+
+  <div class="project-modal-content glass">
+
+    <!-- CLOSE -->
+
+    <button class="close-modal" id="closeModal">
+
+      ✕
+
+    </button>
+
+    <!-- DYNAMIC CONTENT -->
+
+    <div id="modalBody"></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   PROJECT MODAL
+========================= */
+
+const modal =
+document.getElementById('projectModal');
+
+const modalBody =
+document.getElementById('modalBody');
+
+const closeModal =
+document.getElementById('closeModal');
+
+/* DETAILS BUTTONS */
+
+const detailButtons =
+document.querySelectorAll('.details-btn');
+
+/* OPEN MODAL */
+
+detailButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const card =
+      button.closest('.project-card');
+
+    const details =
+      card.querySelector('.project-details');
+
+    modalBody.innerHTML =
+      details.innerHTML;
+
+    modal.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+
+  });
+
+});
+
+/* CLOSE MODAL */
+
+function closeProjectModal(){
+
+  modal.classList.remove('active');
+
+  document.body.style.overflow = 'auto';
+
+}
+
+closeModal.addEventListener(
+  'click',
+  closeProjectModal
+);
+
+/* OVERLAY CLICK */
+
+document
+.querySelector('.project-modal-overlay')
+.addEventListener(
+  'click',
+  closeProjectModal
+);
+
+
+/* ESC CLOSE */
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape'){
+    closeProjectModal();
+  }
+});
+
+/* ESC KEY */
+
+document.addEventListener('keydown', e => {
+
+  if(
+    e.key === 'Escape' &&
+    modal.classList.contains('active')
+  ){
+    closeProjectModal();
+  }
+
+});
+
+/* =========================
+   FILTERS
+========================= */
+
+const filterButtons =
+document.querySelectorAll('.filter-btn');
+
+const projectCards =
+document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    filterButtons.forEach(btn =>
+      btn.classList.remove('active'));
+
+    button.classList.add('active');
+
+    const filter =
+      button.getAttribute('data-filter');
+
+    projectCards.forEach(card => {
+
+      if(
+        filter === 'all' ||
+        card.dataset.category === filter
+      ){
+        card.style.display = 'block';
+      }
+
+      else{
+        card.style.display = 'none';
+      }
+
+    });
+
+  });
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
